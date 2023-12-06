@@ -1,0 +1,54 @@
+body{
+    margin: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+.container{
+
+    width: 70%;
+
+    margin-top: 100px;
+    padding: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgrey;
+    border: 1px solid black;
+    border-style: groove;
+
+}
+
+.A{
+    margin: 10px;
+    padding: auto;
+
+    background-color: white;
+    border: 4px solid green;
+}
+
+.B{
+    margin: 10px;
+    padding: auto;
+
+    background-color: white;
+    border: 4px solid blue;
+}
+
+.C{
+    margin: 10px;
+    padding: auto;
+
+    background-color: white;
+    border: 4px solid chocolate;
+}
+
+
+
+

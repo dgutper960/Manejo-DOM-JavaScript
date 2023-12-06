@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implenetar estilos por nombres de clase con DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+
+        <img width="350" src="images/1.webp" alt="1">
+        <img width="300" src="images/2.webp" alt="2">
+        <img width="270" src="images/3.webp" alt="3">
+        <img width="250" src="images/4.webp" alt="4">
+        <img width="301" src="images/5.webp" alt="5">
+        <img width="300" src="images/6.webp" alt="6">
+        <img width="310" src="images/7.webp" alt="7">
+        <img width="299" src="images/8.webp" alt="8">
+
+    </main>
+
+    <script>
+        // Previamente hemos implemantado en el css los estilos para las clases A, B y C
+        // vamos a obtener un array de elementos con querySelectorAll
+        let arrayImg = document.querySelectorAll("img");
+        // recorremos el array (en este caso si que es un array)
+        arrayImg.forEach(element =>{
+            // extraemos el valor del atributo width
+            let largo = element.getAttribute("width");
+            // evaluamos y añadimos clase segun el largo
+            if(largo > "300"){ // si el largo es superior a 300px se añade la clase A
+                element.classList.add("A");
+            } else if(largo < "300"){ // si el largo es inferior a 300px se añade la clase A
+                element.classList.add("B");
+            } else if(largo == "300"){ // si el largo es igual a 300px se añade la clase A
+                element.classList.add("C");
+            }
+        });
+        // NOTA: HEMOS TENIDO QUE QUITAR LOS PX A LOS WIDTH PORQUE NO LOS DETECTAVA BIEN
+    </script>
+    
+</body>
+</html>
