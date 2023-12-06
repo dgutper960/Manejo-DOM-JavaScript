@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación del innerHTML</title>
+</head>
+<body>
+    <h1>innerHTML</h1>
+
+    <p id="inner">
+        Este párrafo está seleccionado con el innerHTML
+    </p>
+
+    <script>
+        // igualamos una variable al elemento mediante id
+        // -> Una vez hecho esto esta variable abarca todo el contenido del p id="inner"
+        var cadena = document.getElementById("inner"); 
+
+        // si igualamos sin más vamos a machacar lo de antes por lo que concatenamos
+        cadena.innerHTML += '<p>Texto añadido con innerHTML</p>';
+
+    </script>
+    
+</body>
+</html>

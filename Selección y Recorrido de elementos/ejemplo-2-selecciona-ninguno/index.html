@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obteniendo ningún elemento</title>
+</head>
+<body>
+    <h1>Lista de elementos</h1>
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li id="unico">elemento 3</li>
+        <li>elemento 4</li>
+    </ul>
+    <h3 id="ask">¿Existe el elemento?</h3>
+    
+    <script>
+        // seleccionamos un elemento que no existe
+        let indefinido = document.getElementById("undefined");
+        let respuesta = document.getElementById("ask");
+        if (indefinido) { // si let indefinido tiene contenido se escribe con innerHTML
+            respuesta.innerHTML += "<p>El elemento existe</p>";
+        } else { // si let indefinido NO tiene contenido se escribe con innerHTML
+            respuesta.innerHTML += "<p>El elemento NO existe</p>";
+        }
+    </script>
+    <!-- COMO VEMOS, AUNQUE SE HA AÑADIDO UN <p> CON INERHTML,AL IMPRIMIR, SE HA MANTENIDO EL TIPO DE ELEMENTO H3 -->
+</body>
+</html>

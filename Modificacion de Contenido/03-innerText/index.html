@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innerTex</title>
+  </head>
+  <body>
+    <h1>Presentamos innerText</h1>
+
+    <p>Vamos a tomar un parrafo con innerText y le vamos a meter codigo html</p>
+
+    <p id="text"></p>
+
+    <script>
+      // innerText, no será procesado como htmml
+      //-> Será interpretado como texto plano en vex de html
+      var texto = document.getElementById("text");
+      texto.innerText = "<b>Hola Chavales</b>"; // se imprime literalamente la implementación 
+
+    </script>
+  </body>
+</html>

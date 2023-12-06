@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Eventos</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h3>Botón con HAndler de evento click que simularemos</h3>
+        <p>
+            <button id="normal">HANDLER PROPIO</button>
+        </p>
+
+        <h3>Botón con Handler que simula el lanzamiento de evento click en el otro</h3>
+        <p>
+            <button id="simular">SIMULAR CLICK EN EL OTRO BOTÓN Y LANZA EVENTO SIN...</button>
+        </p>
+
+    </div>
+
+    <script>
+        //obtengo los elementos con los que voy a trabajar
+        let normal = document.getElementById("normal");
+        let simular = document.getElementById("simular");
+        let container = document.getElementsByClassName("contailer")[0]; // como es un array obtenemos el primero
+
+        // capturamos el evento de manera 'Normal'
+        normal.addEventListener("dblclick", e =>{
+            alert("He hecho doble click en el botón co hansdler propio");
+        });
+
+        // creo el lsintener para el evento sintético
+        container.addEventListener("colorChange", e =>{ // esta funcionesta declarada en otro ejemplo (buscar e impelmentar)
+            e.target.style.backgroundColor = "red";
+        });
+
+    </script>
+    
+</body>
+</html>

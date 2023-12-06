@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID programático</title>
+</head>
+<body>
+
+    <h1 id="id">
+        Este título va a cambiar su valor de id
+    </h1>
+
+
+    <script>
+        const valorID = document.getElementById("id");
+        valorID.id = "ID"; // si inspeccionamos la pág vemos que el valor de id es ID
+        /* Ahora puedo tener conflicto si tengo este id seleccionado en otra parte del código */
+    </script>
+    
+</body>
+</html>

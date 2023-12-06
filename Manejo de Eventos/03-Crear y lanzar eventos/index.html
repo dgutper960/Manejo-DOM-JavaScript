@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear y Lanzar Eventos</title>
+</head>
+<body>
+
+
+
+
+    <script>
+        // sintaxis para crear un evento
+
+        // Podemos crear un objeto sintético
+        let myEvent = new Event("changeColor"); // nuevo nombre
+        // Podemos simular un evento de navegador 
+        let browserEvent = new MouseEvent("dblclick"); // opciones
+
+        // Para lanzar uno de los dos debemos
+        // sintético o navegador
+        let element = document.getDocumentById("id_elemento");
+
+        // será capturado si tiene un handler para ese evento concreto
+        element.dispatchEvent(objeto_event);
+    
+
+    </script>
+    
+</body>
+</html>

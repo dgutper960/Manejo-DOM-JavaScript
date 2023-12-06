@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obteniendo varios elementos</title>
+  </head>
+  <body>
+    <h1>Lista de elementos</h1>
+    <ul>
+      <li>elemento 1</li>
+      <li>elemento 2</li>
+      <li id="unico">elemento 3</li>
+      <li>elemento 4</li>
+    </ul>
+    <h3 id="ask">¿Existe el elemento?</h3>
+
+    <script>
+      // seleccionamos todos los elementos de tipo li
+      let elementos_li = document.querySelectorAll("li");
+      // podemos sacar por consola la lista de elementos (como método de depuración)
+      console.log(elementos_li);
+      let respuesta = document.getElementById("ask");
+      // recorremos la lista de elementos y combiamos los estilos
+      // Atención!! que si elementos_li no es un array habrá que usar un for normal o hacer transformación previa
+      elementos_li.forEach((element) => {
+        // para cada uno de los elementos cambiamos los estilos (por ejemplo, según el contenido de element)
+        if (element.textContent === "elemento 2") {
+          element.style.fontFamily = "Courier";
+          element.style.fontSize = "2rem";
+          element.style.color = "blue";
+        } else {
+          element.style.fontFamily = "Courier";
+          element.style.fontSize = "3rem";
+          element.style.color = "green";
+        }
+      });
+      // si el elemento contiene valores contestamos en ask
+      if (elementos_li.length > 0) {
+        respuesta.innerHTML +=
+          "<br>El array elementos_li contiene al menos un valor";
+      } else {
+        respuesta.innerHTML += "<br>El array elementos_li NO contiene valores";
+      }
+    </script>
+  </body>
+</html>

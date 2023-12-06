@@ -1,0 +1,23 @@
+body{
+    margin: 0px;
+}
+
+.main__class{
+
+    text-align: center;
+    background-color: burlywood;
+    margin: 20px;
+    padding: 20px;
+}
+
+.lista{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    padding: 10px;
+    background-color: antiquewhite;
+    color: darkblue;
+}
+

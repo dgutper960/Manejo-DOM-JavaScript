@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>outerHTML</title>
+</head>
+<body>
+    <h1>Presentacion outerHTML</h1>
+
+    <p id="outer">
+        Tenemos este párrafo que vamos a seleccionar con outerHTML
+    </p>
+
+    <p>
+        No solo se ha modificado el contenido, también se ha modificado el tipo de elemento p > ul
+    </p>
+
+    
+
+    <script>
+        // seleccionamos un párrafo por id
+        var elemento = document.getElementById("outer");
+        // vamos a usar outerHTML para cambiarlo a una lista desordenada
+        elemento.outerHTML += "<ul>Lista<li>elemento</li><li>elemento</li></ul>";
+        // Como vemos al inspeccionar, hemos cambiado el tipo de elemento de <p> a <ul>
+
+    </script>
+    
+</body>
+</html>

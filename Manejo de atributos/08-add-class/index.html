@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tenemos elementos en el html que no tienen clases -->
+
+    <main>
+        <h1>Añadiendo clases</h1>
+
+        <p>
+            Este es el primer párrafo
+        </p>
+    
+        <p class="lista">Lista de cosas</p>
+        <ul>
+            <li>cosa 1</li>
+            <li>cosa 2</li>
+            <li>cosa 3</li>
+            <li>cosa 4</li>
+        </ul>
+    </main>
+
+    <script>
+        // seleccionamos el elemento main y le añadimos la clase .main
+        let main = document.querySelector("main");
+        main.classList.add("main__class");
+        /*
+        No es necesario recorrer ya que usando el primero ya se cambian todos
+        */
+
+        // podemos seleccionar todos los elementos y luego recorrer el array
+        let lista = document.querySelectorAll("li");
+        // ahora tengo un array con todos los elementos list
+        lista.forEach(elemento =>{
+            elemento.classList.add("lista");
+        }); // se le añade a cada elemento la clase lista y vemos que aplica el estilo
+/*
+OJO -> SI HEMOS OBTENIDO LOS ELEMENTOS CON document.get... 
+DEBEMOS TENER CUIDADO DE NO RECORRERLO CON UN FOREACH
+YA QUE NO OBTENDREMOS UN ARRAY, SINO UN HTMLCOLLECTION
+-> eso nos dará error. Se debe usar el for tradicional
+let elementos = document.getElementsByClassName("lista");
+for(elementos of elemento ){
+    elemento.(cualquier cosa que quiera hacer);
+}
+
+*/
+/*
+OTRA OPCION ES REALIZAR UNA TRANSFORMACIÓN DE HTMLCOLLECTION A ARRAY
+-> Primero lo transforma y ya se puede manejar con foreach
+*/
+// Array.form(elementos).forEach(elemento =>{
+//     element.(manejamos el elemento);
+// });
+
+    /*
+    Borramos las clases de igual forma pero con remove
+    */
+
+
+    </script>
+
+
+    
+</body>
+</html>

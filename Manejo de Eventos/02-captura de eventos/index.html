@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubbling VS Capturing</title>
+</head>
+<body>
+
+    <!-- Veamos la diferencia entre Bubbling y Captiring  -->
+    <div class="container">
+
+        <h3>Captura de eventos Bubbling</h3>
+        <!-- Anidamos una serie de elementos -->
+        <div class="bubbling">
+            <div class="A">
+                A
+                <div class="A">
+                    B
+                    <div class="A">
+                        C
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>Captura de eventos Capturing</h3>
+        <!-- Anidamos una serie de elementos -->
+        <div class="capturing">
+            <div class="D">
+                D
+                <div class="E">
+                    E
+                    <div class="F">
+                        F
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Handler para mostrar la información -> pasamos el objeto event (e)
+        function showContent(e){
+            console.log(e);
+            alert(`El elemento se originó en ${e.targuet.id} y ahora estoy en ${this.id}`);
+        }
+
+        // obtenemos todos los bubbling div para la demostracion de Bubbling
+        let bubbling_div = document.querySelectorAll("#bubbling div");
+        // obtenemos todos los capturing div para la demostración de capturing
+        let capturing_div = document.querySelectorAll("#capturing div");
+
+        // Añado los manejadores de eventos (click) para cada uno de los bubbling
+        bubbling_div.forEach(function(item){
+            item.addEventListener('click', showContent); 
+        });
+
+        // Añado los manejadores de eventos (click) para cada uno de los capturing
+        capturing_div.forEach(function(item){
+            item.addEventListener('click', showContent); // a estas funciones no se les pone los parentesis
+        });
+
+        /**
+         * PARA EJECUTAR EN NAVEGADOR, DEBEMOS COMENTAR LA PARTE QUE NO ESTÉ EN USO
+        */
+
+        /*
+        ALTAMENTE RECOMENDABLE VER LOS EJEMPLOS EN EL GITHUB DEL INSTRUCTOR
+        -> https://github.com/pekechis/OpenWebinars_Manipulacion_DOM_JavaScript
+        */
+
+
+
+    </script>
+    
+
+
+
+</body>
+</html>

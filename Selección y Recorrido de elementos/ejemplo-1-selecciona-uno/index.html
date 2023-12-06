@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obteniendo un elemento</title>
+</head>
+<body>
+    <h1>Lista de elementos</h1>
+    <ul>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li id="unico">elemento 3</li>
+        <li>elemento 4</li>
+    </ul>
+    
+    <script>
+        // seleccionamos el elemento y le  cambiamos el estilo
+        let unico = document.getElementById("unico");
+        unico.style.color = "blue";
+    </script>
+    <!-- Al cargar la página vemos que nuestro elemento ha cambiado a azul -->
+</body>
+</html>
