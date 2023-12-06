@@ -13,6 +13,22 @@
     <h2>Titulo 5</h2>
     <h3>Titulo 6</h3>
 
+    <h1>Elementos del array tomados con getElementsByClassName</h1>
+    <h3 class="array">h3 del array</h3>
+    <p class="array">Parrafo 1 del array</p>
+    <p class="array">Parrafo 2 del array</p>
+    <h4 class="array">h4 del array</h4>
+    <div class="array">
+      <a href="#">Enlace div 1</a>
+      <a href="#">Enlace div 2</a>
+      <a href="#">Enlace div 3</a>
+    </div>
+    <span class="array">
+      <a href="#">Enlace span 1</a>
+      <a href="#">Enlace span 2</a>
+      <a href="#">Enlace span 3</a>
+    </span>
+
     <script>
       //vamos a tomar el primer titulo (h1) con querySelector
       var titulo = document.querySelector("h1");
@@ -27,6 +43,20 @@
       //vamos a tomar el primer titulo (h2) con querySelector
       var tituloH2 = document.querySelector("h2");
       tituloH2.style.display = "none";
+
+      // Vamos a obtener un HTML COLLECTION de elementos mediante nombre de clase
+      // Aplicaremos estilos a estos elementos mediante foreach
+      let element_list = document.getElementsByClassName("array");
+      // recorremos los elementos y le aplicamos estilos (borde de color)
+      // se debe recorrer con un ford normal ya que se trata de un html collection
+      for(let i = 0; i<element_list.length; i++){
+        element_list[i].style.border = "1px solid blue";
+        element_list[i].style.backgroundColor = "lightblue";
+        element_list[i].style.padding = "10px";
+        element_list[i].style.margin = "10px";
+
+      }
+
     </script>
     <!-- igualmente podrémos modificar diferentes estilos -->
   </body>
