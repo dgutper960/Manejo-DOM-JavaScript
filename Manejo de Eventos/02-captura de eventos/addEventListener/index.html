@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo addEventListener</title>
+</head>
+<body>
+    <!-- Vamos a ver un ejemplo de uso de addEventListener -->
+
+    <!-- Creamos varios elementos html -->
+    <h3 id="h3">Prueba de click</h3>
+    <p id="p">
+        Parráfo de prueba
+    </p>
+    <button id="boton">Haz Click</button>
+
+    <br>
+    <br>
+    <br>
+    <button id="flecha">Boton Flecha</button>
+
+    <h1 id="result"></h1>
+
+    <!-- En el script vamos a asociar cada elemento a su evento -->
+
+
+    <script>
+        // definimos las es que se lanzarán al hacer click en cada elemento
+        function alertaH3(e){
+            alert('Has hecho click en el elemento H3');
+        }
+        function alertaP(e){
+            alert('Has hecho click en el elemento p');
+        }
+        function alertaButton(e){
+            alert('Has hecho click en el elemento button');
+        }
+
+
+        // asociamos el elemento a una variable
+        let titulo = document.getElementById("h3");
+        // asociamos el elemento a la funcion deseada
+        titulo.addEventListener("click", alertaH3); // como entrada el evento y la funcion 
+
+        // repetimos la operacion con los demas elementos
+        let parrafo = document.getElementById("p");
+        parrafo.addEventListener("click", alertaP);
+
+        let button = document.getElementById("boton");
+        button.addEventListener("click", alertaButton);
+
+        // Podemos hacer funciones flecha con los addEventListener
+        let flecha = document.getElementById("flecha");
+        let result = document.getElementById("result");
+        flecha.addEventListener("click", e =>{
+            titulo.style.color = "blue"; // cambiamos un estilo de otro elemento
+            parrafo.removeEventListener("click", alertaP); // eliminamos el Listener de otro elemento
+            result.innerHTML = "Se ha hecho click en el Botón Flecha";
+            result.style.fontFamily = "courier";
+            result.style.fontSize = "26px";
+            result.style.backgroundColor = "black";
+            result.style.color = "white";
+            result.style.width = "570px";
+        });
+        /*
+        Vemos que de esta forma podemos atacar a varios elementos y de diferentes formas al tiempo 
+        */
+        /**
+         * SIEMPRE ES RECOMENDABLE VER LA DOCIMENTOACIÓN DE CADA EVENTO Y SUS PROPIEDADES
+         * **/
+
+    </script>
+</body>
+</html>

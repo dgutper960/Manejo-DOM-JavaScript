@@ -1,5 +1,3 @@
-## md #########################
-
 # En este apartado veremos los diferentes tipos de eventos
 
 ## Eventos Generales
